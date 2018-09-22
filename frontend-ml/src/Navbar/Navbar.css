@@ -1,0 +1,30 @@
+.NavbarContainer {
+  text-align: center;
+  background-color: #FFE600;
+  color: #333333;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.LogoML {
+  margin-right: 10px;
+  height: 19px;
+  vertical-align: middle;
+}
+
+.SearchInput {
+  height: 21px;
+  width: 500px;
+  vertical-align: middle;
+  margin-right: -3px;
+}
+
+.SearchButton {
+  vertical-align: middle;
+  margin-top: 1.5px;
+  padding-top: 4px;
+}
+
+.SearchLogo{
+  height: 19px;
+}
