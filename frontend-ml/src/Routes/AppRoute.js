@@ -1,6 +1,5 @@
 import React from 'react'
-import { Route, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux'
+import { Route } from 'react-router-dom';
 
 const AppRoute = ({exact, path, component, key}) => {
  return (
