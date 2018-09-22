@@ -1,6 +1,6 @@
 import { takeEvery } from 'redux-saga/effects';
-import loadProducts, { requestProducts } from '../Navbar/Actions';
+import loadProducts, { REQUEST_PRODUCTS } from '../Navbar/Actions';
 
 export default function* searchSaga() {
-  yield takeEvery(requestProducts, loadProducts);
+  yield takeEvery(REQUEST_PRODUCTS, loadProducts);
 }

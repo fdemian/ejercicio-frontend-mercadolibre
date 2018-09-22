@@ -12,7 +12,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       requestProducts();
     },
     changeInput: (value) =>{
-      changeSearchValue(value)
+      changeSearchValue(value);
     }
   }
 }

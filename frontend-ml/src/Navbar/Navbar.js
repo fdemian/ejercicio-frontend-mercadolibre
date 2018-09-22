@@ -17,7 +17,7 @@ const Navbar = ({ searchFn, changeInput }) => {
       <button
          type="button"
          className="SearchButton"
-         onClick={(e) => console.log(e.target)}
+         onClick={() => searchFn()}
       >
         <img src={logoSearch} alt="Busqueda" className="SearchLogo" />
       </button>
