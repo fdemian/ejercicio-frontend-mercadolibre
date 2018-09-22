@@ -22,11 +22,9 @@ export function changeSearchValue(value){
 
 export default function* loadProducts(){
   try {
-    console.log("_____DDDDD");
     const state = yield select();
-    console.log("_____AAAAA");
-    const query = state.products.query;
-    const products = yield call(Fetch.GET, '/api/products'+ query);
+    const query = state.products.searchValue;
+    const products = yield call(Fetch.GET, '/api/products?q='+ query);
     yield put({type: RECEIVE_PRODUCTS, data: products});
   }
   catch(error) {

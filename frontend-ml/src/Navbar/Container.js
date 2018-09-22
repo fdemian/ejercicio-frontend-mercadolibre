@@ -9,10 +9,10 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     searchFn: () => {
-      requestProducts();
+      dispatch(requestProducts());
     },
     changeInput: (value) =>{
-      changeSearchValue(value);
+      dispatch(changeSearchValue(value));
     }
   }
 }
