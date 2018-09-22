@@ -12,7 +12,7 @@ const initialState = {
   error: false
 }
 
-export function products(state = initialState, action) {
+function products(state = initialState, action) {
 
  switch (action.type) {
 
@@ -26,7 +26,7 @@ export function products(state = initialState, action) {
       return {...state, error: true};
 
     case CHANGE_SEARCH_VALUE:
-      return {...state, searchValue: action.data};
+      return {...state, searchValue: action.value};
 
     default:
       return state;

@@ -1,10 +1,13 @@
 import React from 'react';
 import './SearchResults.css';
 
-const SearchResults = () => {
+const SearchResults = ({ products }) => {
+
+    if(!products || products.length === 0)
+      return null;
+
     return(
     <div>
-      <p>jdsfkfla</p>
     </div>
     );
 }
