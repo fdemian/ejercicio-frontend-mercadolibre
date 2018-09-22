@@ -3,13 +3,22 @@ import logoML from '../assets/Logo_ML.png';
 import logoSearch from '../assets/ic_Search.png';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ searchFn, changeInput }) => {
     return(
     <div className="NavbarContainer">
      <div>
       <img src={logoML} alt="Mercado Libre" className="LogoML" />
-      <input type="text" placeholder="Nunca dejes de buscar" className="SearchInput"/>
-      <button type="button" className="SearchButton">
+      <input
+        type="text"
+        placeholder="Nunca dejes de buscar"
+        className="SearchInput"
+        onChange={(e) => changeInput(e.target.value)}
+      />
+      <button
+         type="button"
+         className="SearchButton"
+         onClick={(e) => console.log(e.target)}
+      >
         <img src={logoSearch} alt="Busqueda" className="SearchLogo" />
       </button>
      </div>

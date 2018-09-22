@@ -1,23 +1,32 @@
-/*import
-{
-  GET_USER_INFO,
-  RECEIVE_USER_INFO,
-  RECEIVE_USER_INFO_FAILURE,
-  GET_USER_STORIES,
-  RECEIVE_USER_STORIES,
-  RECEIVE_USER_STORIES_FAILURE
-}
-from '../../User/Actions';*/
+import {
+  REQUEST_PRODUCTS,
+  RECEIVE_PRODUCTS,
+  REQUEST_PRODUCTS_FAILURE,
+  CHANGE_SEARCH_VALUE
+} from '../../Navbar/Actions';
 
 const initialState = {
+  searchValue: "",
   products: [],
-  isFetching: true,
+  isFetching: false,
   error: false
 }
 
 export function products(state = initialState, action) {
 
  switch (action.type) {
+
+    case REQUEST_PRODUCTS:
+      return {...state, isFetching: true};
+
+    case RECEIVE_PRODUCTS:
+      return {...state, data: action.data};
+
+    case REQUEST_PRODUCTS_FAILURE:
+      return {...state, error: true};
+
+    case CHANGE_SEARCH_VALUE:
+      return {...state, searchValue: action.data};
 
     default:
       return state;
