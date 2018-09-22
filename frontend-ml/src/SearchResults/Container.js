@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-import SearchResults from './r';
-import { requestProducts , changeSearchValue } from './Actions';
+import SearchResults from './SearchResults';
 
 const mapStateToProps = (state, ownProps) => {
   return {
