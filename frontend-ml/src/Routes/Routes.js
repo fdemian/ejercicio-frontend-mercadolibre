@@ -1,7 +1,7 @@
 import App from '../App/App';
 import Home from '../Home/Home';
-import ProductDetails from '../ProductDetails/ProductDetails';
-import SearchResults from '../SearchResults/SearchResults';
+import ProductDetails from '../ProductDetails/Container';
+import SearchResults from '../SearchResults/Container';
 
 const ApplicationRoutes = {
    App: App,
