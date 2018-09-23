@@ -10,7 +10,7 @@ class ProductDetails extends Component {
   }
 
   render(){
-    const { products, match } = this.props;
+    const { product, products, match } = this.props;
     const { id } = match.params;
     const product = products.filter(p => p.id === parseInt(id))[0];
 

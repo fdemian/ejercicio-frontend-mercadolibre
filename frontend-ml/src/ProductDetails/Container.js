@@ -4,7 +4,8 @@ import { requestProductDetails } from './Actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    products: state.products.products
+    products: state.products.products,
+    product: state.products.product
   }
 }
 
