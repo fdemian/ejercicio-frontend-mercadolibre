@@ -2,10 +2,6 @@ import { connect } from 'react-redux';
 import Navbar from './Navbar';
 import { requestProducts , changeSearchValue } from './Actions';
 
-const mapStateToProps = (state, ownProps) => {
-  return {}
-}
-
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     searchFn: () => {
@@ -17,6 +13,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-const NavbarContainer = connect(mapStateToProps, mapDispatchToProps)(Navbar);
+const NavbarContainer = connect(null, mapDispatchToProps)(Navbar);
 
 export default NavbarContainer;
