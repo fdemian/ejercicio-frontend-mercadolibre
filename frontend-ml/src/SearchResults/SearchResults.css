@@ -1,14 +1,3 @@
-.SearchResultsContainer
-{
-  background-color: white;
-  margin-left: 10%;
-  margin-top: 32px;
-  padding-top: 16px;
-  width: 80%;
-  padding-bottom: 5px;
-  margin-right: 10%;
-}
-
 /* Result Box */
 .ResultBoxContainer {
   width: 90%;

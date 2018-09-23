@@ -7,7 +7,7 @@ const App = ({children}) => {
   return (
   <div>
     <Navbar />
-    <div>
+    <div className="ViewContainer">
       {children}
     </div>
   </div>

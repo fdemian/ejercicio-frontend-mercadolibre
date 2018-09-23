@@ -1,0 +1,125 @@
+.ProductDetailsContainer {
+  width: 90%;
+}
+
+.ProductHeadingFlex {
+  display: flex;
+}
+
+.ProductHeadingFlex div {
+  display: block;
+}
+
+.ProductDetailsImage {
+  width: 680px;
+  height: 680px;
+  border-radius: 4px;
+}
+
+.ProductStatus {
+  margin-bottom: 16px;
+}
+
+.ProductStatus p {
+  font-size: 14px;
+  color: #999999;
+}
+
+.ProductDetailsTitle p {
+  font-size: 24px;
+  font-weight: 100;
+  color: #333333;
+}
+
+.ProductDetailsTitle {
+  margin-bottom: 32px;
+}
+
+.ProductDetailsPrice p {
+  font-size: 46px;
+  font-weight: 100;
+  color: #333333;
+}
+
+.ProductDetailsPrice {
+  margin-bottom: 32px;
+}
+
+.PurchaseButton button {
+
+  font-family: "Proxima Nova", -apple-system, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  background-color: #3483FA;
+  border-color: #3483FA;
+  width: 200px;
+  height: 46px;
+  color: white;
+
+  /* Border props */
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-collapse: collapse;
+  border-image-outset: 0px;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
+
+
+  border-left-style: solid;
+  border-left-width: 1px;
+
+  border-right-style: solid;
+  border-right-width: 1px;
+
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+
+  /* Other props */
+  cursor: pointer;
+  display: block;
+  flex-grow: 1;
+
+  font-size: 15px;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 20px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  min-width: 0px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 12px;
+  text-align: center;
+  text-indent: 0px;
+  text-shadow: none;
+  text-transform: none;
+  vertical-align: middle;
+  white-space: pre;
+  word-spacing: 0px;
+  writing-mode: horizontal-tb;
+
+}
+
+.ProductDetailsDescription {
+  margin-left: 32px;
+}
+
+.ProductDetailsDescription .DescriptionHeading {
+  font-size: 28px;
+  color: #333333;
+}
+
+.ProductDetailsDescription .DescriptionText {
+  font-size: 16px;
+  color: #999999;
+}
