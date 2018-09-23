@@ -28,8 +28,10 @@ class ProductDetails extends Component {
 
         <div>
           <div className="ProductStatus"><p>Nuevo - 234 vendidos</p></div>
-          <div className="ProductDetailsTitle"><p>{fakeProduct.title}</p></div>
-          <div className="ProductDetailsPrice"><p>{fakeProduct.price}</p></div>
+          <div className="TitleHeadingContainer">
+            <p className="ProductDetailsTitle">{fakeProduct.title}</p>
+            <p className="ProductDetailsPrice">{fakeProduct.price}</p>
+          </div>
           <div className="PurchaseButton">
             <button type="button">
               Comprar

@@ -25,23 +25,17 @@
   color: #999999;
 }
 
-.ProductDetailsTitle p {
+.ProductDetailsTitle {
   font-size: 24px;
   font-weight: 100;
   color: #333333;
-}
-
-.ProductDetailsTitle {
   margin-bottom: 32px;
 }
 
-.ProductDetailsPrice p {
+.ProductDetailsPrice {
   font-size: 46px;
   font-weight: 100;
   color: #333333;
-}
-
-.ProductDetailsPrice {
   margin-bottom: 32px;
 }
 
