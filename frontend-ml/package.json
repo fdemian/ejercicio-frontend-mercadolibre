@@ -2,6 +2,7 @@
   "name": "frontend-ml",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8000",
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
     "react": "^16.5.2",

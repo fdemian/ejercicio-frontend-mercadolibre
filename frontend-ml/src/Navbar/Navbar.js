@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logoML from '../assets/Logo_ML.png';
 import logoSearch from '../assets/ic_Search.png';
 import './Navbar.css';
@@ -13,7 +14,9 @@ const Navbar = ({ searchFn, changeInput }) => {
     return(
     <div className="NavbarContainer">
      <div>
-      <img src={logoML} alt="Mercado Libre" className="LogoML" />
+      <Link to="/">
+        <img src={logoML} alt="Mercado Libre" className="LogoML" />
+      </Link>
       <input
         type="text"
         placeholder="Nunca dejes de buscar"
