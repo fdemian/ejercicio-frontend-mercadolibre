@@ -12,7 +12,7 @@ export function requestProductDetails(id){
   }
 }
 
-export function* loadProductDetails(action){
+export default function* loadProductDetails(action){
   try {
     const endpointBase = "http://localhost:8000/api/items/​​" + action.id;
     const data = yield call(Fetch.GET, endpointBase, null, null);

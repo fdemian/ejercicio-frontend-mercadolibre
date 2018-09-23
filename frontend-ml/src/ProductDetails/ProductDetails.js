@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './ProductDetails.css';
 
-const ProductDetails = ({ products, match }) => {
+class ProductDetails extends Component {
 
+  componentDidMount(){
+    const { match } = this.props;
+    const { id } = match.params;
+    this.props.onLoad(id);
+  }
+
+  render(){
+    const { products, match } = this.props;
     const { id } = match.params;
     const product = products.filter(p => p.id === parseInt(id))[0];
 
@@ -37,6 +45,8 @@ const ProductDetails = ({ products, match }) => {
 
     </div>
     );
+  }
+
 }
 
 export default ProductDetails;

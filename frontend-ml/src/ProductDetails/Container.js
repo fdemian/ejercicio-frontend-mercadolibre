@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import ProductDetails from './ProductDetails';
+import { requestProductDetails } from './Actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -7,6 +8,15 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-const NavbarContainer = connect(mapStateToProps, null)(ProductDetails);
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    onLoad: (id) => {
+      dispatch(requestProductDetails(id));
+    }
+  }
+}
+
+const NavbarContainer = connect(mapStateToProps, mapDispatchToProps)
+(ProductDetails);
 
 export default NavbarContainer;
