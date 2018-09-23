@@ -12,7 +12,7 @@ class ProductDetails extends Component {
   render(){
     const { product, products, match } = this.props;
     const { id } = match.params;
-    const product = products.filter(p => p.id === parseInt(id))[0];
+    const fakeProduct = products.filter(p => p.id === parseInt(id))[0];
 
     return(
     <div className="ProductDetailsContainer">
@@ -20,16 +20,16 @@ class ProductDetails extends Component {
       <div className="ProductHeadingFlex">
         <div>
           <img
-            src={product.image}
-            alt={product.name}
+            src={fakeProduct.image}
+            alt={fakeProduct.name}
             className="ProductDetailsImage"
           />
         </div>
 
         <div>
           <div className="ProductStatus"><p>Nuevo - 234 vendidos</p></div>
-          <div className="ProductDetailsTitle"><p>{product.title}</p></div>
-          <div className="ProductDetailsPrice"><p>{product.price}</p></div>
+          <div className="ProductDetailsTitle"><p>{fakeProduct.title}</p></div>
+          <div className="ProductDetailsPrice"><p>{fakeProduct.price}</p></div>
           <div className="PurchaseButton">
             <button type="button">
               Comprar
@@ -40,7 +40,7 @@ class ProductDetails extends Component {
 
       <div className="ProductDetailsDescription">
         <p className="DescriptionHeading">Descripción del producto</p>
-        <p className="DescriptionText">{product.description}</p>
+        <p className="DescriptionText">{fakeProduct.description}</p>
       </div>
 
     </div>
