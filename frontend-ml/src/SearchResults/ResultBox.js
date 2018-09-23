@@ -9,7 +9,7 @@ const ResultBox = ({ product }) => {
 
      <hr />
 
-     <div>
+     <div className="ResultBoxFlex">
 
        <div>
          <img
@@ -21,18 +21,14 @@ const ResultBox = ({ product }) => {
 
       <div>
 
-        <div>
-          <p className="ResultBoxPrice">
-            {product.price}
-          </p>
-          <p className="ResultBoxLocation">
-            {product.localidad}
-          </p>
+        <div className="ResultBoxHeading">
+          <span className="ResultBoxPrice">{product.price}</span>
+          <span className="ResultBoxLocation">{product.localidad}</span>
         </div>
 
         <div className="ResultBoxTitle">
           <p>
-            <Link to={`/ProductDetails/${product.id}`}>
+            <Link to={`/ProductDetails/${product.id}`} className="LinkToProductDetail">
               {product.title}
             </Link>
           </p>

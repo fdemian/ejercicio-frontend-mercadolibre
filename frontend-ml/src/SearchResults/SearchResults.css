@@ -3,9 +3,15 @@
   width: 90%;
 }
 
-.ResultBoxContainer div
+.ResultBoxFlex
 {
   display: flex;
+}
+
+.LinkToProductDetail {
+  color: #333333;
+  font-size: 18px;
+  text-decoration: none;
 }
 
 .ResultBoxContainer hr
@@ -23,14 +29,16 @@
 
 .ResultBoxPrice
 {
-  font-size: 18px;
-  display:block;
+  font-size: 24px;
+  display:flex !important;
+  color: #333333;
 }
 
 .ResultBoxLocation
 {
   font-size: 14px;
-  margin-left: 500px;
+  display: flex  !important;
+  margin-left: 600px;
 }
 
 .ResultBoxTitle
