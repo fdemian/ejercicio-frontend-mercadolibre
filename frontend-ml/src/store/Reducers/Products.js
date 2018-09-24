@@ -28,7 +28,7 @@ function products(state = initialState, action) {
       return {...state, isFetching: true};
 
     case RECEIVE_PRODUCTS:
-      return {...state, products: action.data};
+      return {...state, products: action.data, isFetching: false};
 
     case REQUEST_PRODUCTS_FAILURE:
       return {...state, error: true, isFetching: false};
@@ -41,10 +41,10 @@ function products(state = initialState, action) {
       return {...state, isFetching: true};
 
     case RECEIVE_PRODUCT_DETAILS:
-      return {...state, product: action.data};
+      return {...state, product: action.data, isFetching: false};
 
     case REQUEST_PRODUCT_DETAILS_FAILURE:
-      return {...state, error: true};
+      return {...state, error: true, isFetching: false};
 
     default:
       return state;
