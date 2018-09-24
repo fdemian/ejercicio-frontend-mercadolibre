@@ -31,7 +31,7 @@ function products(state = initialState, action) {
       return {...state, products: action.data};
 
     case REQUEST_PRODUCTS_FAILURE:
-      return {...state, error: true};
+      return {...state, error: true, isFetching: false};
 
     case CHANGE_SEARCH_VALUE:
       return {...state, searchValue: action.value};
