@@ -28,7 +28,7 @@ const ResultBox = ({ product }) => {
 
         <div className="ResultBoxTitle">
           <p>
-            <Link to={`/ProductDetails/${product.id}`} className="LinkToProductDetail">
+            <Link to={`/items/${product.id}`} className="LinkToProductDetail">
               {product.title}
             </Link>
           </p>

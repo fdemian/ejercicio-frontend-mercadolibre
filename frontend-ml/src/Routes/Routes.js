@@ -7,9 +7,8 @@ const ApplicationRoutes = {
    App: App,
    Routes: [
     {path: "/", exact: true, component: Home },
-    {path: "/ProductDetails/:id", exact: true, component: ProductDetails},
-    {path: "/SearchResults", exact: true, component: SearchResults}
-    /*{component: NotFound }*/
+    {path: "/items/:id", exact: true, component: ProductDetails},
+    {path: "/items?search=", exact: true, component: SearchResults}
    ]
 };
 

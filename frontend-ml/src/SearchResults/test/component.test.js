@@ -61,7 +61,7 @@ describe('<SearchResults /> ', () => {
       expect(boxContainer.contains(Link));
 
       expect(resultBoxImg.props().src).toBe("http://url")
-      expect(productLink.props().to).toBe("/ProductDetails/1");
+      expect(productLink.props().to).toBe("/items/1");
     })
 
     /*
