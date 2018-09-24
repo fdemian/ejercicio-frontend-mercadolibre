@@ -14,7 +14,9 @@ export function requestProductDetails(id){
 
 export default function* loadProductDetails(action){
   try {
-    const endpointBase = "http://localhost:8000/api/items/​​" + action.id;
+
+    const productId = encodeURIComponent(action.id);
+    const endpointBase = "http://localhost:8000/api/items/​​" + productId;
     const data = yield call(Fetch.GET, endpointBase, null, null);
     yield put({type: RECEIVE_PRODUCT_DETAILS, data: data});
   }
