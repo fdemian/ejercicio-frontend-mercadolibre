@@ -9,7 +9,12 @@ const SearchResults = ({ products }) => {
 
   return(
   <div className="SearchResultsContainer">
-    {products.map(p => <ResultBox product={p} />)}
+    {products.map(p =>
+      <div>
+        <ResultBox product={p} />
+        <hr />
+      </div>
+    )}
   </div>
   );
 

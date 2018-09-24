@@ -1,20 +1,22 @@
 import React from 'react';
+import freeShipping from '../assets/ic_shipping@2x.png';
 import { Link } from 'react-router-dom';
+
 import './SearchResults.css';
 
 const ResultBox = ({ product }) => {
 
-   return(
-   <div className="ResultBoxContainer">
+   console.log(product);
 
-     <hr />
+   return(
+   <div className="ResultBoxContainer" key={product.id}>
 
      <div className="ResultBoxFlex">
 
        <div>
          <img
-           src={product.image}
-           alt={product.name}
+           src={product.picture}
+           alt={product.id}
            className="ResultBoxImage"
          />
        </div>
@@ -22,8 +24,14 @@ const ResultBox = ({ product }) => {
       <div>
 
         <div className="ResultBoxHeading">
-          <span className="ResultBoxPrice">{product.price}</span>
-          <span className="ResultBoxLocation">{product.localidad}</span>
+          <span className="ResultBoxPrice">
+            ${product.price.amount}
+            {product.free_shipping ?
+              <img src={freeShipping} alt="Free shipping" className="ShippingLogo"/> : 
+              null
+            }
+          </span>
+          {/*<span className="ResultBoxLocation">{product.localidad}</span>*/}
         </div>
 
         <div className="ResultBoxTitle">
