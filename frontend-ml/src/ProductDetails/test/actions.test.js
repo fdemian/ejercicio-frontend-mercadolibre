@@ -16,7 +16,7 @@ describe('<ProductDetail /> Actions', () => {
   })
 
   /*
-  xit('Load products', () => {
+  it('Load products', () => {
 
     const dispatched = [];
     const endpointURL = "http://localhost:8000/api/items?q=";
