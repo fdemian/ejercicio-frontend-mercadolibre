@@ -21,7 +21,7 @@ class ProductDetails extends Component {
       <div className="ProductHeadingFlex">
         <div>
           <img
-            src={product.image}
+            src={product.picture}
             alt={product.name}
             className="ProductDetailsImage"
           />
