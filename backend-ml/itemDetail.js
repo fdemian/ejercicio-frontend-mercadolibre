@@ -25,7 +25,9 @@ function itemDetail(req, res) {
           if (!error && response.statusCode === 200) {
 
             const description = JSON.parse(body);
-
+            const attr = description.attributes.map(a => a.name);
+            console.log(attr);
+            
             responseDetail = {
               author: author,
               item: {
@@ -44,20 +46,17 @@ function itemDetail(req, res) {
                }
             };
 
-            console.log(itemDetail.pictures[0].url);
-
             res.json(responseDetail);
           }
           else{
-            res.json(error);
+            res.json({status: 500, error: "Server error"});
           }
         })
 
       }
       else {
         // Error
-        console.log(body);
-        res.send(body);
+        res.json({status: 500, error: "Server error"});
       }
 
   })

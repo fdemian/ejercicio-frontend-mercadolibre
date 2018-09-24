@@ -8,13 +8,15 @@ const SearchResults = ({ products }) => {
     return null;
 
   return(
-  <div className="SearchResultsContainer">
-    {products.map(p =>
-      <div>
-        <ResultBox product={p} />
-        <hr />
-      </div>
-    )}
+  <div>
+    <div className="SearchResultsContainer">
+      {products.map(p =>
+        <div>
+          <ResultBox product={p} />
+          <hr />
+        </div>
+      )}
+    </div>
   </div>
   );
 

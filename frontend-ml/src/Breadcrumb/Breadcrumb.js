@@ -1,0 +1,21 @@
+import React from 'react';
+import './Breadcrumbs.css';
+
+const CrumbDisplay = ({crumb, isLast}) => {
+  if(isLast)
+    return <span className="Crumb Last">{crumb}</span>;
+  else
+    return <span className="Crumb">{crumb} >&nbsp;</span>;
+}
+
+const Breadcrumb = ({items}) => {
+  return(
+  <div className="BreadCrumbContainer">
+    {items.map((c, index) =>
+      <CrumbDisplay crumb={c} isLast={(index === items.length-1)} />
+    )}
+  </div>
+  );
+}
+
+export default Breadcrumb;

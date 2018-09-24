@@ -1,0 +1,15 @@
+.BreadCrumbContainer {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: 10%;
+}
+
+.Crumb {
+  color: #999999;
+  font-size: 14px;
+}
+
+.Crumb.Last {
+  color: #666666;
+  font-weight: normal;
+}

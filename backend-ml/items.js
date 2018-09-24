@@ -4,6 +4,7 @@ const mercadoAPIBaseURL = "https://api.mercadolibre.com";
 const itemsLimit = 4;
 
 function getCategories(results){
+
   const {filters, available_filters} = results;
 
   let filterValues;
@@ -63,6 +64,9 @@ function getItemsFromAPI(req, res) {
           lastname: "Caminiti"
         };
 
+        const productFilter = parsedResults.available_filters.filter(f => f.id =="product");
+        console.log(categories);
+        
         var response = {
           author: author,
           categories: categories,
@@ -73,7 +77,7 @@ function getItemsFromAPI(req, res) {
       }
       else {
         // Error
-       res.send(body);
+        res.json({status: 500, error: "Server error"});
       }
 
   })
