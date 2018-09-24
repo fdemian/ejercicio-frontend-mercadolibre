@@ -43,68 +43,32 @@
 }
 
 .PurchaseButton button {
-
   font-family: "Proxima Nova", -apple-system, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   background-color: #3483FA;
   border-color: #3483FA;
   width: 200px;
   height: 46px;
   color: white;
-
-  /* Border props */
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-collapse: collapse;
-  border-image-outset: 0px;
-  border-image-repeat: stretch;
-  border-image-slice: 100%;
-  border-image-source: none;
-  border-image-width: 1;
-
-
-  border-left-style: solid;
-  border-left-width: 1px;
-
-  border-right-style: solid;
-  border-right-width: 1px;
-
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-
-  /* Other props */
   cursor: pointer;
   display: block;
   flex-grow: 1;
-
+  margin: 0px 0px 0px 0px;
+  border-radius: 4px;
   font-size: 15px;
-  font-style: normal;
-  font-variant-caps: normal;
-  font-weight: normal;
-  letter-spacing: normal;
   line-height: 20px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 0px;
   min-width: 0px;
   padding-bottom: 12px;
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 12px;
   text-align: center;
-  text-indent: 0px;
-  text-shadow: none;
-  text-transform: none;
-  vertical-align: middle;
-  white-space: pre;
-  word-spacing: 0px;
-  writing-mode: horizontal-tb;
-
+  border-style: solid;
+  border-width: 1px;
+  box-sizing: border-box;
+  border-collapse: collapse;
+  border-image-outset: 0px;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
 }
 
 .ProductDetailsDescription {
