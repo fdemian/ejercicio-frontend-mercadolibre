@@ -14,15 +14,14 @@ app.listen(port, function () {
 
 // Items controller.
 app.get('/api/items', function (req, res) {
-  var searchValue = req.query.q;
-  var getItemsURL = mercadoAPIBaseURL + "/sites/MLA/search?q=" + searchValue;
+  var searchValue = encodeURIComponent(req.query.q);
+  var endpoint =  `/sites/MLA/search?q=${searchValue}`;
+  var getItemsURL = mercadoAPIBaseURL + endpoint;
+
+  // Console logging.
   console.log('/api/items');
-  console.log(getItemsURL);
 
   request.get(getItemsURL, function(error, response, body) {
-      console.log('error:', error);
-      console.log('statusCode:', response && response.statusCode);
-      console.log('body:', body);
       if (!error && response.statusCode === 200) {
         // Ok.
         res.json(body);
@@ -36,13 +35,21 @@ app.get('/api/items', function (req, res) {
 });
 
 app.get('/api/items/:id', function (req, res) {
-  var id = req.params.id;
-  var getItemURL = mercadoAPIBaseURL + "/items/​" + id;
+  var id = encodeURIComponent(req.params.id);
+  var getItemURL = mercadoAPIBaseURL + "/items/​" + "MLA650523389"; // Replace for actual id.
   var getItemDescriptionURL = getItemURL + "/description";
 
-  console.log("GET ITEM: " + getItemURL);
-  console.log("GET ITEM DESCRIPTION: " + getItemDescriptionURL);
+  console.log('/api/items/' + 1);
 
-  // For now, this controller echoes back the parameters sent.
-  res.json({val: id});
+  request.get(getItemURL, function(error, response, body) {
+      if (!error && response.statusCode === 200) {
+        console.log(body);
+        res.json(body);
+      }
+      else {
+       console.log(body);
+       res.send(body);
+      }
+  })
+
 });
