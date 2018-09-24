@@ -1,5 +1,5 @@
 import React from 'react';
-import './Breadcrumbs.css';
+import './Breadcrumb.css';
 
 const CrumbDisplay = ({crumb, isLast}) => {
   if(isLast)

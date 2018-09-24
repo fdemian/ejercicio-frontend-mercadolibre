@@ -1,6 +1,6 @@
 import React from 'react';
 import CrumbDisplay from './CrumbDisplay';
-import './Breadcrumbs.css';
+import './Breadcrumb.css';
 
 const Breadcrumb = ({items}) => {
   return(
