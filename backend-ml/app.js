@@ -20,11 +20,14 @@ app.get('/api/items', function (req, res) {
 
   // Console logging.
   console.log('/api/items');
-
+  console.log(getItemsURL);
+  console.log(endpoint);
+  console.log(searchValue);
   request.get(getItemsURL, function(error, response, body) {
       if (!error && response.statusCode === 200) {
         // Ok.
-        res.json(body);
+        console.log(body);
+        res.send(body);
       }
       else {
         // Error
