@@ -1,5 +1,6 @@
 import Fetch from '../store/Fetch';
 import { select, put, call } from 'redux-saga/effects';
+import { REQUEST_CATEGORY_INFO } from '../Navbar/Actions';
 
 export const REQUEST_PRODUCT_DETAILS = "REQUEST_PRODUCT_DETAILS";
 export const RECEIVE_PRODUCT_DETAILS = "RECEIVE_PRODUCT_DETAILS";
@@ -17,8 +18,8 @@ export default function* loadProductDetails(action){
     const productId = encodeURIComponent(action.id);
     const endpointBase = "http://localhost:8000/api/items/​​" + productId;
     const data = yield call(Fetch.GET, endpointBase, null, null);
-    console.log(data.item);
     yield put({type: RECEIVE_PRODUCT_DETAILS, data: data.item});
+    yield put({type: REQUEST_CATEGORY_INFO, id: data.item.categoryId});
   }
   catch(error) {
     yield put({type: REQUEST_PRODUCT_DETAILS_FAILURE, error: error});

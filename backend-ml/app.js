@@ -5,6 +5,7 @@ var request = require('request');
 // Routes
 var itemDetail = require('./itemDetail');
 var getItemsFromAPI = require('./items');
+var categoryDetail = require('./categoryDetail');
 
 const app = express();
 app.use(cors())
@@ -20,3 +21,4 @@ app.listen(port, function () {
 // Items controller.
 app.get('/api/items', getItemsFromAPI);
 app.get('/api/items/:id', itemDetail);
+app.get('/api/categories/:id', categoryDetail)

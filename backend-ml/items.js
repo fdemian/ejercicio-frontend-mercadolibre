@@ -18,7 +18,7 @@ function getCategories(results){
   }
 
   const categoryFilters = filterValues.filter(f => f.id === "category");
-  const categorias = categoryFilters[0].values.map(c => c.name);
+  const categorias = categoryFilters[0].values;
 
   return categorias;
 }
@@ -66,10 +66,11 @@ function getItemsFromAPI(req, res) {
 
         const productFilter = parsedResults.available_filters.filter(f => f.id =="product");
         console.log(categories);
-        
+
         var response = {
           author: author,
-          categories: categories,
+          categories: categories.map(c => c.name),
+          mainCategory: categories[0].id,
           items: items
         }
 

@@ -25,9 +25,7 @@ function itemDetail(req, res) {
           if (!error && response.statusCode === 200) {
 
             const description = JSON.parse(body);
-            const attr = description.attributes.map(a => a.name);
-            console.log(attr);
-            
+
             responseDetail = {
               author: author,
               item: {
@@ -42,7 +40,8 @@ function itemDetail(req, res) {
                 condition: itemDetail.condition,
                 free_shipping: itemDetail.shipping.free_shipping,
                 sold_quantity: itemDetail.sold_quantity,
-                description: description.plain_text
+                description: description.plain_text,
+                categoryId: itemDetail.category_id
                }
             };
 
