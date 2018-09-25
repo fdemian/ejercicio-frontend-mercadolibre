@@ -8,6 +8,7 @@ export const REQUEST_PRODUCTS_FAILURE = "REQUEST_PRODUCTS_FAILURE";
 export const CHANGE_SEARCH_VALUE = "CHANGE_SEARCH_VALUE";
 
 export const CHANGE_SEARCH_CATEGORIES = "CHANGE_SEARCH_CATEGORIES";
+export const RESET_CATEGORIES = "RESET_CATEGORIES";
 
 export const REQUEST_CATEGORY_INFO  = "REQUEST_CATEGORY_INFO";
 export const RECEIVE_CATEGORY_INFO  = "RECEIVE_CATEGORY_INFO";
@@ -16,6 +17,12 @@ export const RECEIVE_CATEGORY_FAIL  = "RECEIVE_CATEGORY_FAIL";
 export function requestProducts(){
   return {
     type: REQUEST_PRODUCTS
+  }
+}
+
+export function resetCategories(){
+  return {
+    type: RESET_CATEGORIES
   }
 }
 

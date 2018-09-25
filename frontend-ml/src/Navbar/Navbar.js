@@ -10,11 +10,11 @@ function handleKeyPress(key, searchFn){
    }
 }
 
-const Navbar = ({ searchFn, changeInput }) => {
+const Navbar = ({ searchFn, changeInput, resetCategories }) => {
     return(
     <div className="NavbarContainer">
      <div>
-      <Link to="/">
+      <Link to="/" onClick={resetCategories}>
         <img src={logoML} alt="Mercado Libre" className="LogoML" />
       </Link>
       <input

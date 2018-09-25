@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Navbar from './Navbar';
-import { requestProducts , changeSearchValue } from './Actions';
+import { requestProducts , changeSearchValue, resetCategories } from './Actions';
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
@@ -9,6 +9,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     changeInput: (value) =>{
       dispatch(changeSearchValue(value));
+    },
+    resetCategories(){
+      dispatch(resetCategories());
     }
   }
 }
