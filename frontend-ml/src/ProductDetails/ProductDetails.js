@@ -19,7 +19,7 @@ class ProductDetails extends Component {
       return null;
 
     return(
-    <div className="ProductDetailsContainer">
+    <div className="ProductDetailsContainer View">
 
       <Helmet>
         <title>{product.title}</title>

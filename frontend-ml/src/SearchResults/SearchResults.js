@@ -11,8 +11,11 @@ const SearchResults = ({ products, searchValue, categories }) => {
   const keywords = categories.join(", ");
   const pageTitle = "Busqueda - " + searchValue;
 
+  if(searchValue.trim() === "")
+    return null;
+
   return(
-  <div>
+  <div className="View">
     <Helmet>
       <meta charSet="utf-8" />
       <title>{pageTitle}</title>
