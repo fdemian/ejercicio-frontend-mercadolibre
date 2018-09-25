@@ -15,6 +15,7 @@ describe('<Home /> ', () => {
     const initialState = {
       searchValue: "",
       products: [],
+      categories: { categories: []},
       isFetching: false,
       error: false,
       product: null
