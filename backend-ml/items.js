@@ -1,5 +1,7 @@
 var request = require('request');
+var utils = require('./utils');
 
+const splitPrice = utils.splitPrice;
 const mercadoAPIBaseURL = "https://api.mercadolibre.com";
 const itemsLimit = 4;
 
@@ -24,13 +26,14 @@ function getCategories(results){
 }
 
 function mapItem(item){
+  const splittedPrice = splitPrice(item.price);
   return {
     id: item.id,
     title: item.title,
     price: {
       currency: item.currency_id,
-      amount: item.price,
-      decimals: 1 // TBD
+      amount: splittedPrice.integerPart,
+      decimals: splittedPrice.decimalPart
     },
     picture: item.thumbnail,
     condition: item.condition,
@@ -64,8 +67,8 @@ function getItemsFromAPI(req, res) {
           lastname: "Caminiti"
         };
 
-        const productFilter = parsedResults.available_filters.filter(f => f.id =="product");
-        console.log(categories);
+        const productFilter = parsedResults.available_filters
+                                           .filter(f => f.id =="product");
 
         var response = {
           author: author,

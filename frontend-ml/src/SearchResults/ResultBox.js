@@ -1,12 +1,11 @@
 import React from 'react';
 import freeShipping from '../assets/ic_shipping@2x.png';
+import { formatWithSeparator, formatDecimalPart} from '../utils.js';
 import { Link } from 'react-router-dom';
 
 import './SearchResults.css';
 
 const ResultBox = ({ product }) => {
-
-   console.log(product);
 
    return(
    <div className="ResultBoxContainer" key={product.id}>
@@ -25,9 +24,10 @@ const ResultBox = ({ product }) => {
 
         <div className="ResultBoxHeading">
           <span className="ResultBoxPrice">
-            ${product.price.amount}
+            ${formatWithSeparator(product.price.amount, ".")}
+            <sup>{formatDecimalPart(product.price.decimals)}</sup>
             {product.free_shipping ?
-              <img src={freeShipping} alt="Free shipping" className="ShippingLogo"/> : 
+              <img src={freeShipping} alt="Free shipping" className="ShippingLogo"/> :
               null
             }
           </span>

@@ -1,5 +1,7 @@
 var request = require('request');
+var utils = require('./utils');
 
+const splitPrice = utils.splitPrice;
 const mercadoAPIBaseURL = "https://api.mercadolibre.com";
 const author = {
   name: "Federico",
@@ -25,6 +27,7 @@ function itemDetail(req, res) {
           if (!error && response.statusCode === 200) {
 
             const description = JSON.parse(body);
+            const formattedPrice = splitPrice(itemDetail.price);
 
             responseDetail = {
               author: author,
@@ -33,8 +36,8 @@ function itemDetail(req, res) {
                 title: itemDetail.title,
                 price: {
                  currency: itemDetail.currency_id,
-                 amount: itemDetail.price,
-                 decimals: 0,
+                 amount: formattedPrice.integerPart,
+                 decimals: formattedPrice.decimalPart,
                 },
                 picture: itemDetail.pictures[0].url,
                 condition: itemDetail.condition,

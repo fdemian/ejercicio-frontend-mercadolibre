@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { formatWithSeparator, formatDecimalPart} from '../utils.js';
 import './ProductDetails.css';
 
 class ProductDetails extends Component {
@@ -10,6 +11,7 @@ class ProductDetails extends Component {
   }
 
   render(){
+    
     const { product, match } = this.props;
 
     if(!product)
@@ -31,7 +33,10 @@ class ProductDetails extends Component {
           <div className="ProductStatus"><p>Nuevo - 234 vendidos</p></div>
           <div className="TitleHeadingContainer">
             <p className="ProductDetailsTitle">{product.title}</p>
-            <p className="ProductDetailsPrice">${product.price.amount}</p>
+            <p className="ProductDetailsPrice">
+              ${formatWithSeparator(product.price.amount, ".")}
+              <sup>{formatDecimalPart(product.price.decimals)}</sup>
+            </p>
           </div>
           <div className="PurchaseButton">
             <button type="button">
