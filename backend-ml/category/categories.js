@@ -1,15 +1,19 @@
-var express = require('express');
-var request = require('request');
+const express = require('express');
+const request = require('request');
+const config = require('../config');
+const logger = require('../loggerConfig');
 
-var config = require('../config');
-
-var router = express.Router();
+const router = express.Router();
 
 // /api/categories
 router.get('/:id', categoryDetail);
 
 function categoryDetail(req, res) {
+
   const id = decodeURIComponent(req.params.id);
+
+  logger.info("/categories/"+ id)
+
   const getCategoryInfoURL = config.API_BASE_URL + "/categories/" + id;
   let responseDetail;
 

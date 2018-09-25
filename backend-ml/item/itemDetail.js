@@ -1,6 +1,7 @@
-var request = require('request');
-var utils = require('../utils');
-var config = require('../config');
+const request = require('request');
+const utils = require('../utils');
+const config = require('../config');
+const logger = require('../loggerConfig');
 
 const splitPrice = utils.splitPrice;
 
@@ -8,7 +9,7 @@ function itemDetail(req, res) {
   var id = decodeURIComponent(req.params.id);
   var getItemURL = config.API_BASE_URL + "/items/​" + id;
 
-  console.log('/api/items/' + id);
+  logger.info("/categories/"+ id)
 
   let responseDetail;
 

@@ -1,16 +1,17 @@
-var express = require('express');
-var cors = require('cors');
-var request = require('request');
-var config = require('./config');
+const express = require('express');
+const cors = require('cors');
+const request = require('request');
+const config = require('./config');
 
-var categories = require('./category/categories');
-var items = require('./item/items');
+const categories = require('./category/categories');
+const items = require('./item/items');
+const logger = require('./loggerConfig');
 
 const app = express();
 app.use(cors())
 
 app.listen(config.port, function () {
-  console.log('Mercado Libre app listening on port: ' + config.port);
+  logger.log('info', 'Mercado Libre app listening on port: ' + config.port);
 });
 
 // Application routes.

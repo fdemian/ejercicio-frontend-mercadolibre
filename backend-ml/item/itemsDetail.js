@@ -1,6 +1,7 @@
 var request = require('request');
 var utils = require('../utils');
 var config = require('../config');
+const logger = require('../loggerConfig');
 
 const splitPrice = utils.splitPrice;
 
@@ -52,7 +53,7 @@ function getItemsFromAPI(req, res) {
   const getItemsURL = config.API_BASE_URL + endpoint;
 
   // Console logging.
-  console.log('/api/items');
+  logger.info("/api/items")
 
   request.get(getItemsURL, function(error, response, body) {
       if (!error && response.statusCode === 200) {

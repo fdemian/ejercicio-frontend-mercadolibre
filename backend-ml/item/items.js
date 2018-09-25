@@ -1,10 +1,9 @@
-var express = require('express');
-var request = require('request');
+const express = require('express');
+const request = require('request');
+const itemDetail = require('./itemDetail');
+const itemsDetail = require('./itemsDetail');
 
-var itemDetail = require('./itemDetail');
-var itemsDetail = require('./itemsDetail');
-
-var router = express.Router();
+const router = express.Router();
 
 // Routes handling.
 router.get('/', itemsDetail);
