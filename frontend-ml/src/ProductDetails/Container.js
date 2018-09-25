@@ -4,7 +4,6 @@ import { requestProductDetails } from './Actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    products: state.products.products,
     product: state.products.product
   }
 }
@@ -17,7 +16,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-const NavbarContainer = connect(mapStateToProps, mapDispatchToProps)
-(ProductDetails);
+const Container = connect(mapStateToProps, mapDispatchToProps)(ProductDetails);
 
-export default NavbarContainer;
+export default Container;

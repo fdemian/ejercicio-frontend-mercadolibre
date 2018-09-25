@@ -11,8 +11,8 @@ class ProductDetails extends Component {
   }
 
   render(){
-    
-    const { product, match } = this.props;
+
+    const { product } = this.props;
 
     if(!product)
       return null;

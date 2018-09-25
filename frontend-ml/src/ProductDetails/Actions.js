@@ -1,5 +1,5 @@
 import Fetch from '../store/Fetch';
-import { select, put, call } from 'redux-saga/effects';
+import { put, call } from 'redux-saga/effects';
 import { REQUEST_CATEGORY_INFO } from '../Navbar/Actions';
 
 export const REQUEST_PRODUCT_DETAILS = "REQUEST_PRODUCT_DETAILS";
