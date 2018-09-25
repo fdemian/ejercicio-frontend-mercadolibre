@@ -1,6 +1,7 @@
 var express = require('express');
 var cors = require('cors');
 var request = require('request');
+var config = require('./config');
 
 // Routes
 var itemDetail = require('./itemDetail');
@@ -10,12 +11,8 @@ var categoryDetail = require('./categoryDetail');
 const app = express();
 app.use(cors())
 
-const port = 8000;
-const mercadoAPIBaseURL = "https://api.mercadolibre.com";
-const itemsLimit = 4;
-
-app.listen(port, function () {
-  console.log('Mercado Libre app listening on port: ' + port);
+app.listen(config.port, function () {
+  console.log('Mercado Libre app listening on port: ' + config.port);
 });
 
 // Items controller.
