@@ -1,9 +1,8 @@
 var request = require('request');
 var utils = require('./utils');
+var config = require('./config');
 
 const splitPrice = utils.splitPrice;
-const mercadoAPIBaseURL = "https://api.mercadolibre.com";
-const itemsLimit = 4;
 
 function getCategories(results){
 
@@ -51,7 +50,7 @@ function getItems(results, limit){
 function getItemsFromAPI(req, res) {
   const searchValue = encodeURIComponent(req.query.q);
   const endpoint =  `/sites/MLA/search?q=${searchValue}`;
-  const getItemsURL = mercadoAPIBaseURL + endpoint;
+  const getItemsURL = config.API_BASE_URL + endpoint;
 
   // Console logging.
   console.log('/api/items');
@@ -61,17 +60,12 @@ function getItemsFromAPI(req, res) {
 
         const parsedResults = JSON.parse(body);
         const categories = getCategories(parsedResults);
-        const items = getItems(parsedResults, itemsLimit);
-        const author = {
-          name: "Federico",
-          lastname: "Caminiti"
-        };
-
+        const items = getItems(parsedResults, config.itemsLimit);
         const productFilter = parsedResults.available_filters
                                            .filter(f => f.id =="product");
 
         var response = {
-          author: author,
+          author: config.author,
           categories: categories.map(c => c.name),
           mainCategory: categories[0].id,
           items: items

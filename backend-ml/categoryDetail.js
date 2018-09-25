@@ -1,14 +1,9 @@
 var request = require('request');
-
-const mercadoAPIBaseURL = "https://api.mercadolibre.com";
-const author = {
-  name: "Federico",
-  lastname: "Caminiti"
-};
+var config = require('./config');
 
 function itemDetail(req, res) {
   var id = decodeURIComponent(req.params.id);
-  var getCategoryInfoURL = mercadoAPIBaseURL + "/categories/" + id;
+  var getCategoryInfoURL = config.API_BASE_URL + "/categories/" + id;
 
   console.log('/api/categories/' + id);
 
@@ -23,9 +18,6 @@ function itemDetail(req, res) {
       }
 
   })
-
-
-
 }
 
 module.exports = itemDetail;

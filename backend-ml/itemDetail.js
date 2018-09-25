@@ -1,16 +1,12 @@
 var request = require('request');
 var utils = require('./utils');
+var config = require('./config');
 
 const splitPrice = utils.splitPrice;
-const mercadoAPIBaseURL = "https://api.mercadolibre.com";
-const author = {
-  name: "Federico",
-  lastname: "Caminiti"
-};
 
 function itemDetail(req, res) {
   var id = decodeURIComponent(req.params.id);
-  var getItemURL = mercadoAPIBaseURL + "/items/​" + id;
+  var getItemURL = config.API_BASE_URL + "/items/​" + id;
 
   console.log('/api/items/' + id);
 
@@ -22,7 +18,7 @@ function itemDetail(req, res) {
         const itemDetail = JSON.parse(body);
 
         const descEndpoint = `/items/​${id}/description`.replace(/[^\x00-\x7F]/g, "");
-        var getItemDescriptionURL = mercadoAPIBaseURL + descEndpoint;
+        var getItemDescriptionURL = config.API_BASE_URL + descEndpoint;
         request.get(getItemDescriptionURL, function(error, response, body) {
           if (!error && response.statusCode === 200) {
 
@@ -30,7 +26,7 @@ function itemDetail(req, res) {
             const formattedPrice = splitPrice(itemDetail.price);
 
             responseDetail = {
-              author: author,
+              author: config.author,
               item: {
                 id: itemDetail.id,
                 title: itemDetail.title,
