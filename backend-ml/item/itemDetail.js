@@ -1,6 +1,6 @@
 var request = require('request');
-var utils = require('./utils');
-var config = require('./config');
+var utils = require('../utils');
+var config = require('../config');
 
 const splitPrice = utils.splitPrice;
 

@@ -1,6 +1,6 @@
 var request = require('request');
-var utils = require('./utils');
-var config = require('./config');
+var utils = require('../utils');
+var config = require('../config');
 
 const splitPrice = utils.splitPrice;
 
@@ -45,7 +45,6 @@ function getItems(results, limit){
   const mappedItems = initialItems.map(i => mapItem(i));
   return mappedItems;
 }
-
 
 function getItemsFromAPI(req, res) {
   const searchValue = encodeURIComponent(req.query.q);
