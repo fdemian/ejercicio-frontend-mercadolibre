@@ -2,7 +2,7 @@
 
 ## Iniciar la aplicación.
 
-Para correr esta aplicación es necesario arrancar el servidor como el cliente.
+Para correr esta aplicación es necesario arrancar, en orden, primero el servidor y luego el cliente.
 
 
 1) Iniciar el servidor.
