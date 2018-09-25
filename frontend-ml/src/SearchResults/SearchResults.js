@@ -24,7 +24,7 @@ const SearchResults = ({ products, searchValue, categories }) => {
     </Helmet>
     <div className="SearchResultsContainer">
       {products.map(p =>
-        <div>
+        <div key={p.id}>
           <ResultBox product={p} />
           <hr />
         </div>

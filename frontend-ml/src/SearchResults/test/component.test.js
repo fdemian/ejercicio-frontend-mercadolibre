@@ -10,33 +10,42 @@ Enzyme.configure({ adapter: new Adapter() });
 
 const imageSrc = "http://url";
 const products = [{
-    id: 1,
-    image: imageSrc,
-    name: "I phone X",
-    price: "$1980",
-    localidad: "Buenos Aires",
-    title: "I phone X. Negro igual a nuevo!",
-    description: "The Iphone is a smartphone that was designed, developed, and marketed by Apple Inc. It is the eleventh generation of the iPhone. It was announced on September 12, 2017, alongside the iPhone 8 and iPhone 8 Plus, at the Steve Jobs Theater in the Apple Park campus. The phone was released on November 3, 2017, so this device marks the iPhone series' tenth anniversary."
+    id: "MLA0000",
+    title: "Iphone X Nuevo!",
+    price: {
+      currency: "ARS",
+      amount: 1000,
+      decimals: 99
+    },
+    picture: "picture.png",
+    condition: "new",
+    free_shipping: true
   },
   {
-    id: 2,
-    image: imageSrc,
-    name: "I phone 9",
-    price: "$1980",
-    title: "Apple I phone 9. Negro igual a nuevo!",
-    localidad: "Buenos Aires",
-    description: "The Iphone is a smartphone that was designed, developed, and marketed by Apple Inc. It is the eleventh generation of the iPhone. It was announced on September 12, 2017, alongside the iPhone 8 and iPhone 8 Plus, at the Steve Jobs Theater in the Apple Park campus. The phone was released on November 3, 2017, so this device marks the iPhone series' tenth anniversary."
-  }];
+    id: "MLA0001",
+    title: "Iphone 9 Nuevo!",
+    price: {
+       currency: "ARS",
+       amount: 2000,
+       decimals: 0
+    },
+    picture: "picture2.png",
+    condition: "new",
+    free_shipping: false
+  }
+];
 
 const props = {
   products: products,
+  searchValue: "",
+  categories: []
 }
 
 describe('<SearchResults /> ', () => {
 
     it('<SearchResults /> with products.', () => {
 
-      const enzymeWrapper = shallow(<SearchResults products={products} />);
+      const enzymeWrapper = shallow(<SearchResults {...props} />);
       const componentContainer = enzymeWrapper.find('.SearchResultsContainer');
       const resultBoxes = enzymeWrapper.find(ResultBox);
 
@@ -49,19 +58,21 @@ describe('<SearchResults /> ', () => {
 
       const enzymeWrapper = mount(
         <MemoryRouter>
-        <ResultBox product={products[0]} />
+          <ResultBox product={products[0]} />
         </MemoryRouter>
       );
       const boxContainer = enzymeWrapper.find('.ResultBoxContainer');
-      const resultBoxImg = enzymeWrapper.find('img');
+      const resultBoxImg = enzymeWrapper.find('.ResultBoxImage');
+      const shippingImg = enzymeWrapper.find('.ShippingLogo');
       const productLink = enzymeWrapper.find(Link);
 
       // Main component asserts
       expect(boxContainer.contains('img'));
       expect(boxContainer.contains(Link));
 
-      expect(resultBoxImg.props().src).toBe("http://url")
-      expect(productLink.props().to).toBe("/items/1");
+      expect(resultBoxImg.props().src).toBe("picture.png");
+      expect(shippingImg.props().alt).toBe("Free shipping");
+      expect(productLink.props().to).toBe("/items/MLA0000");
     })
 
     /*
