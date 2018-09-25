@@ -1,3 +1,7 @@
+const utils = require('../utils');
+
+const splitPrice = utils.splitPrice;
+
 function getCategories(results){
 
   const {filters, available_filters} = results;
