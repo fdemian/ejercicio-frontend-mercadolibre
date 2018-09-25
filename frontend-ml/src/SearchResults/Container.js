@@ -3,7 +3,9 @@ import SearchResults from './SearchResults';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    products: state.products.products
+    products: state.products.products,
+    searchValue: state.products.searchValue,
+    categories: state.categories.categories,
   }
 }
 
