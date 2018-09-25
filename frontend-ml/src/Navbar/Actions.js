@@ -50,7 +50,7 @@ export default function* loadProducts(action){
 
 export function* loadCategoryInfo(action){
   try {
-    const endpoint = `http://localhost:8000/api/categories/${action.id}`;
+    const endpoint = `/api/categories/${action.id}`;
     const data = yield call(Fetch.GET, endpoint, null, null);
     const parsedData = JSON.parse(data);
     const breadcrumbCategories = parsedData.path_from_root.map(d => d.name);
