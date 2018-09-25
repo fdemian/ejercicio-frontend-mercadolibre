@@ -3,10 +3,12 @@ import
   REQUEST_PRODUCTS,
   RECEIVE_PRODUCTS,
   REQUEST_PRODUCTS_FAILURE,
-  CHANGE_SEARCH_VALUE
+  CHANGE_SEARCH_VALUE,
+  CHANGE_SEARCH_CATEGORIES,
 } from '../Actions';
 
 import reducer from '../../store/Reducers/Products';
+import categoriesReducer from '../../store/Reducers/Categories';
 
 const initialState = {
   searchValue: "",
@@ -15,6 +17,8 @@ const initialState = {
   error: false,
   product: null
 }
+
+const initialCategoriesState = { categories: [] };
 
 const imageSrc = "http://url";
 const testData = [{
@@ -33,6 +37,25 @@ const testData = [{
     localidad: "Buenos Aires",
     description: "The Iphone is a smartphone that was designed, developed, and marketed by Apple Inc. It is the eleventh generation of the iPhone. It was announced on September 12, 2017, alongside the iPhone 8 and iPhone 8 Plus, at the Steve Jobs Theater in the Apple Park campus. The phone was released on November 3, 2017, so this device marks the iPhone series' tenth anniversary."
   }];
+
+
+describe('Test categories reducer', () => {
+
+  it('Return initial state.', () => {
+    expect(categoriesReducer(undefined, {})).toEqual(initialCategoriesState);
+  })
+
+  it('Return initial state.', () => {
+
+    const expectedState = { categories: ['Category1', 'Category2'] };
+
+    expect(categoriesReducer(initialCategoriesState, {
+      type: CHANGE_SEARCH_CATEGORIES,
+      data: ['Category1', 'Category2']
+    })).toEqual(expectedState);
+  })
+})
+
 
 describe('Test Products reducer', () => {
 
